@@ -1,0 +1,27 @@
+server:
+  context-path: /springboot
+  port: 8181
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_products?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 1234
+    type: com.alibaba.druid.pool.DruidDataSource
+redis:
+  host: 192.168.81.132
+  port: 6379
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+#logging:
+#  file: e://temp/my.log
+dubbo:
+  application:
+    name: springboot-dubbo-consumer
+#    registry:
+  scan:
+    base-packages: com.travelsky.wute
+  protocol:
+    name: dubbo
+  registry:
+    address: zookeeper://192.168.81.150:2181
